@@ -1,69 +1,88 @@
-## 📖 Introduction
-This project implements a **DevSecOps pipeline** integrating **development, security, and operations** into a unified workflow.  
-It ensures code quality, performs automated security scans, and deploys the application seamlessly to a Kubernetes environment.
+# Netflix Clone — End-to-End DevSecOps Deployment on AWS!
 
-The pipeline includes:
-- **Continuous Integration (CI)**
-- **Continuous Deployment (CD)**
-- **Security Scanning**
-- **Infrastructure as Code (IaC)**
-- **Monitoring & Logging**
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a05054e7-36af-48b6-9a6f-fc9678b73c09" />
 
----
+<img width="1905" height="978" alt="image" src="https://github.com/user-attachments/assets/d91c8aae-d695-4513-b224-99f1da4d5261" />
 
-## 🛠 Tech Stack
-- **Language/Framework:** Node.js / Java / Python (replace as per your app)
-- **CI/CD Tool:** Jenkins / GitHub Actions
-- **Containerization:** Docker
-- **Orchestration:** Kubernetes
-- **Security Tools:** Trivy, SonarQube
-- **IaC Tools:** Terraform, Ansible
-- **Cloud Provider:** AWS
+
+## 📌 Project Overview
+This project demonstrates a **production-grade DevSecOps pipeline** for deploying a Netflix-style web application on AWS.  
+It covers the complete lifecycle — **containerization**, **security scanning**, **CI/CD automation**, **monitoring**, and **Kubernetes deployment** — using industry-standard tools and best practices.
 
 ---
 
-## 📂 Folder Structure
-DevSecOps-Project-main/
-├── src/ # Application source code
-├── Dockerfile # Docker configuration
-├── Jenkinsfile # CI/CD pipeline script
-├── k8s/ # Kubernetes manifests
-├── terraform/ # Infrastructure as Code scripts
-├── ansible/ # Configuration management
-└── README.md # Project documentation
+## 🚀 Key Features
+- **Containerization:** Dockerized Node.js application with TMDB API integration for movie data.
+- **Secure Development:** Integrated **SonarQube** for static code analysis and **Trivy** for container vulnerability scanning.
+- **Automated CI/CD:** Jenkins pipeline for build, test, scan, image push to Docker Hub, and deployment.
+- **Monitoring & Alerting:** Prometheus for metrics collection, Grafana dashboards for EC2, Jenkins, and Kubernetes monitoring.
+- **GitOps Deployment:** Kubernetes deployment managed with **Argo CD** and Helm charts.
+- **Notifications:** Gmail SMTP integration for pipeline build alerts.
 
 ---
 
-## ⚙️ How It Works
-1. **Code Commit:** Developer pushes code to GitHub.
-2. **CI/CD Trigger:** Jenkins or GitHub Actions pipeline starts.
-3. **Build:** Application is built inside a Docker container.
-4. **Security Scan:** Trivy scans images; SonarQube checks code quality.
-5. **Deploy:** Kubernetes manifests apply to the target cluster.
-6. **Monitor:** Logs and metrics collected via Prometheus/Grafana.
+## 🛠️ Tech Stack & Tools
+**Languages & Frameworks:** Node.js, TypeScript, React  
+**Containerization & Orchestration:** Docker, Kubernetes (EKS)  
+**CI/CD & Automation:** Jenkins, Argo CD, Helm  
+**Security:** SonarQube, Trivy  
+**Monitoring:** Prometheus, Grafana  
+**Cloud Platform:** AWS EC2, EKS, Elastic IP, Security Groups  
 
 ---
 
-## 📦 Deployment
-**Run Locally:**
-```bash
-# Clone the repo
-git clone https://github.com/YourUsername/YourRepoName.git
-cd YourRepoName
+## 🗂️ Project Workflow
+1. **AWS Setup**
+   - Launch EC2 instances for Jenkins, SonarQube, and application.
+   - Configure Elastic IPs and security groups.
+2. **Application Deployment**
+   - Clone repo, build Docker image, integrate TMDB API, run on EC2.
+3. **Security Integration**
+   - Configure SonarQube quality gates.
+   - Run Trivy scans on Docker images.
+4. **CI/CD Automation**
+   - Jenkins pipeline stages: Code checkout → Build → Scan → Docker push → Deploy.
+5. **Monitoring Setup**
+   - Install Prometheus, Node Exporter, and Grafana.
+   - Add dashboards for EC2, Jenkins, Kubernetes nodes.
+6. **Kubernetes Deployment**
+   - Create EKS cluster and node group.
+   - Deploy app via Argo CD with Helm charts.
+7. **Notifications & Cleanup**
+   - Email notifications for pipeline events.
+   - Delete unused resources to avoid AWS costs.
 
-# Build the Docker image
-docker build -t devsecops-app .
+---
 
-# Run the container
-docker run -p 8080:8080 devsecops-app
-Deploy on Kubernetes:
-kubectl apply -f k8s/
-📊 Pipeline Overview
+## 📊 Monitoring Dashboards
+- **EC2 Instance Metrics**
+- **Jenkins Build Performance**
+- **Kubernetes Cluster Health**
+- **Application Performance Metrics**
 
-🤝 Contributing
-Contributions are welcome!
-Please open an issue or submit a pull request.
+---
 
-📜 License
-This project is licensed under the MIT License.
+## 📧 Notifications
+- Jenkins pipeline configured with Gmail SMTP for **real-time build status alerts**.
 
+---
+
+## 🔒 Security Highlights
+- Early vulnerability detection with **SonarQube** and **Trivy**.
+- Quality gates to prevent insecure deployments.
+
+---
+
+
+## 🏆 Learning Outcomes
+- Build and secure CI/CD pipelines for real-world apps.
+- Deploy containerized applications to Kubernetes with GitOps.
+- Monitor and troubleshoot cloud infrastructure.
+- Apply DevSecOps practices from code commit to production.
+
+---
+
+## 📜 License
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
