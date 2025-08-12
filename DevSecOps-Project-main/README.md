@@ -32,10 +32,6 @@ DevSecOps-Project-main/
 ├── ansible/ # Configuration management
 └── README.md # Project documentation
 
-yaml
-Copy
-Edit
-
 ---
 
 ## ⚙️ How It Works
@@ -71,5 +67,3 @@ Please open an issue or submit a pull request.
 📜 License
 This project is licensed under the MIT License.
 
-
-Ask ChatGPT
